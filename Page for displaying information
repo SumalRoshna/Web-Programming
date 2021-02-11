@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To develop web applibation</title>
+</head>
+<body style="background-color:lightcyan;">
+<h1>Web Programming Lab</h1>
+<h1><i>Sumal Roshna K S</i></h1>
+<h2><b>S1 MCA</b></h2>
+<h3>Department of Computer Application</h3>
+<h4>Mar Athanasius College of Engineering, Kothamangalam</h4>
+<p style="font-family:verdana;">The situations that makes me happy and sad:</p>
+<table style="width:30%">
+<tr><th>Happy</th><th>Sad</th></tr>
+<tr><td>When I am with my family </td><td>When my parents scold me</td></tr>
+<tr><td>Going for trips</td><td>When something bad happens</td></tr>
+</table>
+</body>
+</html>
