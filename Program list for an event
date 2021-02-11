@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+body{
+background-color:hotpink;
+}
+h1{
+font-size:400%;
+text-align:center;
+color:pink;
+text-decoration:underline;
+}
+h2{
+font-size:300%;
+}
+ol{
+font-size:250%;
+}
+div{margin:15px;
+padding:15px;
+position:fixed;
+width:150px;
+heigth:100px;
+background:lightblue;
+color:white;
+font-size:200%;
+}
+#p2{
+color:black;
+border:2px solid white;
+font-size:300%;
+}
+#p1{
+color:red;
+text-decoration:underline;
+font-size:300%;
+}
+</style>
+<title>Arts day details</title>
+</head>
+<body>
+<div>ARTS DAY</div>
+<h1>ARTS DAY</h1>
+<p id="p2">ABC College union is conducting the 50th college arts fest on 28th February 2021. We will be having film actor Mr.Dulquer Salman as our chief guest. The schedule of the event is given below.</p><br>
+<h2>Event schedule</h2>
+<ol>
+<li>9 AM -I naugration</li>
+<li>9.30 AM - Music</li>
+<li>10.15 AM - Dance</li>
+<li>10.30 AM - Essay writing</li>
+<li>10.45 AM - Short story writing </li>
+<li>10.50 AM - Pencil drawing and painting</li>
+<li>11 PM - Margamkali</li>
+<li>11.30 PM - Oppana</li>
+<li>1.30 PM - Thiruvathira</li>
+<li>2 PM - Folk dance</li>
+<li>3 PM - MonoAct</li>
+<li>3.30 PM - Skit</li>
+<li>4.30 PM - Fancy dress</li>
+<li>5 PM 	- Group dance</li>
+</ol>
+<p id="p1">Enjoy the fest!!</p></body>
+</html>
