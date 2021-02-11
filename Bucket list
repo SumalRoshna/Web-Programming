@@ -1,0 +1,36 @@
+<!DOCTYPE html
+<html>
+<head>
+<title>To do list</title>
+</head>
+<body>
+<h3 style="font-family:verdana; color:red;">My to do list</h3>
+<p><i><b>Things to do on <mark>15-12-2020</mark>:</b></i></p>
+<ul>
+<li>Wash the car</li>
+<li>Go for shopping</li>
+<li>Visit grandma</li>
+<li>Pay the electricity bill</li>
+<li>Do the assignments</li>
+</ul>
+<p><i><b>Thing to buy:</b></i></p>
+<ol>
+<li>Cocoa powder</li>
+<li>Chocolates</li>
+<li>Fresh cream</li>
+<li>Cookies</li>
+<li><del>Eggs</del></li>
+<li>Butter</li>
+</ol>
+<p><i><b>Assignments for tomorrow:</b></i></p>
+<dl>
+<dt>English</dt>
+<dd>Complete the essay</dd>
+<dt>Mathematics</dt>
+<dd>Do the problems</dd>
+</dl>
+</body>
+</html>
+
+
+	
