@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+<h3>PERSONAL DETAILS:</h3>
+<form>
+    <p><b>Enter your name:</b></p>
+    <label for="first">First name</label>
+    <input type="text" id="first" name="first"><br><br>
+    <label for="last">Last name</label>
+    <input type="text" id="last" name="last"><br>
+    <p><b>Select your gender:</b></p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br><br>
+    <label for="dob"><b>Date of Birth:</b></label>
+    <input type="date" id="dob" name="dob"><br><br>
+    <label for="add"><b>Address:</b></label>
+    <textarea id="add" name="add" rows="3" cols="30"></textarea><br><br>
+    <label for="phn"><b>Phone number:</b></label>
+    <input type="text" id="phn" name="phn"><br><br>
+    <label for="guard"><b>Name of guardian:</b></label>
+    <input type="text" id="guard" name="guard">
+    <p><b>Select relation with gardian:</b></p>
+    <input type="radio" id="father" name="relation" value="father">
+    <label for="father">Father</label><br>
+    <input type="radio" id="hus" name="relation" value="hus">
+    <label for="hus">Husband</label><br>
+    <input type="radio" id="oth" name="relation" value="oth">
+    <label for="oth">Other</label><br><br>
+    <label for="specify">Specify if other:</label>
+    <input type="text" id="specify" name="specify"><br><br>
+    <label for="hobbies"><b>Hobbies:</b></label>
+    <textarea id="hobbies" name="hobbies" rows="2" cols="20"></textarea><br><br>
+    <label for="extra"><b>Extra curricular activities:</b></label>
+    <textarea id="extra" name="extra" rows="2" cols="20"></textarea><br><br>
+    <h3>COURSE INFORMATION:</h3>
+    <p><b>Select the courses you prefer:</b></p>
+    <input type="checkbox" id="ba" name="course1" value="ba">
+    <label for="ba">BA</label><br>
+    <input type="checkbox" id="bsc" name="course2" value="bsc">
+    <label for="bsc">BSc</label><br>
+    <input type="checkbox" id="bca" name="course3" value="bca">
+    <label for="bca">BCA</label><br>
+    <p><b>Select the scheme for the course:</b></p>
+    <input type="checkbox" id="single" name="scheme1" value="single">
+    <label for="single">Single main</label><br>
+    <input type="checkbox" id="double" name="scheme2" value="double">
+    <label for="double">Double main</label><br>
+    <input type="checkbox" id="triple" name="scheme3" value="triple">
+    <label for="triple">Triple main</label><br>
+    <h3>...........................................FOR OFFICE USE.................................................</h3>
+    <label for="officer"><b>Name of the officer:</b></label>
+    <input type="text" id="officer" name="officer"><br><br>
+    <p><b>Status of application:</b></p>
+    <input type="radio" id="yes" name="check" value="yes">
+    <label for="yes">Accepted</label><br>
+    <input type="radio" id="no" name="check" value="no">
+    <label for="no">Not accepted</label><br>
+    <input type="radio" id="pend" name="check" value="pend">
+    <label for="pend">Pending</label><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
