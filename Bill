@@ -1,0 +1,142 @@
+<?php
+$w=new mysqli("localhost","root","") or die("connection failed");
+$q="create database bill";
+if($w->query($q)===TRUE)
+{
+    echo "creation successful";
+}
+else
+{
+    echo "connection failed".$w->error;
+}
+?>
+
+
+____________________________________________________________________________________________________________________
+
+<?php
+$w=new mysqli("localhost","root","","bill");
+$q="create table itembill(item_id int(99), item_name varchar(25), quantity int(99), price int())";
+if($w->query($q)===TRUE)
+{
+    echo "table created successfully";
+}
+ else   
+ {
+     echo "conection failed".$w->error;
+ }
+ ?>
+
+
+____________________________________________________________________________________________________________________
+<?php
+$w=new mysqli("localhost","root","","bill") or die("Connection Failed");
+?>
+<html>
+    <head>
+        <title>Enter Bill</title>
+    </head>
+    <body>
+        <h3 align="center">Bill Details</h3>
+        <form action="" method="POST">
+         <table align="center" border="1" width="50%">
+                <tr>
+                    <th>Item ID</th>
+                    <td><input type="text" name="ID" id="ID" placeholder="Enter ID here.." required=""></td>
+                </tr>
+                <tr>
+                    <th>Item Name</th>
+                    <td><input type="text" name="name" id="name" placeholder="Enter Product name here.." required=""></td>
+                </tr>
+                <tr>
+                    <th>Quantity</th>
+                    <td><input type="number" name="qua" required=""></td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td><input type="text" name="price" id="price" placeholder="Enter Price" required=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align=center""><input type="submit" name="submit" value="Submit"></th>
+                </tr>
+            </table>
+            
+        </form>
+<?php
+if (isset($_POST['submit']))
+{
+    $id=$_POST['ID'];
+    $n=$_POST['name'];
+    $q=$_POST['qua'];
+    $p=$_POST['price'];
+    $qr="insert into bill values('$id','$n','$q','$p')";
+    if ($w->query($qr)===TRUE)
+    {
+        $s="select * from itembill";
+        $re=$w->query($s);
+        if($re->num_rows>0)
+        {
+        ?>
+<table align="center" border="1">
+    <tr>
+        <th>Item_ID</th>
+        <th>Item_name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+       <?php 
+        while($u=$re->fetch_assoc())
+        {
+           
+            ?>
+        <td><?php echo $u['item_id']; ?></td>
+        <td><?php echo $u['item_name']; ?></td>
+        <td><?php echo $u['quantity']; ?></td>
+        <td><?php echo $u['price']; ?></td>
+    </tr>
+    
+        <?php
+        }?>
+        <tr>
+        <th colspan="3">TOTAL</th>
+        <td>
+        <?php
+        $dd = "SELECT SUM(price)FROM bill";
+        $res=$w->query($dd);
+        while($u=$res->fetch_assoc())
+        {
+            echo $u['SUM(price)'];
+        }
+        ?></td>
+    </tr>
+        
+</table>
+<?php
+    }
+
+ else {
+ 
+        echo 'Error Inserting Details';    
+    }
+}
+ else {
+    echo 'Error Occured'.$w->error;
+}
+}
+$w->close();
+?>
+        <script>
+            var letters=/^A-Z a-z$/;
+            var n=document.getElementbyId("name");
+            if(name.value.match(letters))
+            {
+                
+            }
+            else
+            {
+                window.alert("Enter valid name");
+            }
+         </script>
+    </body>
+</html>
