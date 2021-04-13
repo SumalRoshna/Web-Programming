@@ -1,0 +1,131 @@
+<?php
+$w=new mysqli("localhost","root","") or die("connection failed");
+$q="create database grocery";
+if($w->query($q)===TRUE)
+{
+    echo "creation successful";
+}
+else
+{
+    echo "connection failed".$w->error;
+}
+?>
+
+
+____________________________________________________________________________________________________________________
+
+<?php
+$w=new mysqli("localhost","root","","grocery");
+$q="create table item(Itemid int(100), Itemname varchar(25), Availability int(100), ExpDate date int())";
+if($w->query($q)===TRUE)
+{
+    echo "table created successfully";
+}
+ else   
+ {
+     echo "conection failed".$w->error;
+ }
+ ?>
+
+
+____________________________________________________________________________________________________________________
+
+<?php
+$w=new mysqli("localhost","root","","grocery") or die("Connection Failed");
+?>
+<html>
+    <head>
+        <title>Stock dispaly</title>
+    </head>
+    <body>
+        <h3 align="center">Stock Details</h3>
+        <form action="" method="POST">
+         <table align="center" border="1" width="50%">
+                <tr>
+                    <th>Item ID</th>
+                    <td><input type="text" name="ID" id="ID" placeholder="Enter ID here.." required=""></td>
+                </tr>
+                <tr>
+                    <th>Item Name</th>
+                    <td><input type="text" name="name" id="name" placeholder="Enter Product name here.." required=""></td>
+                </tr>
+                <tr>
+                    <th>Availability</th>
+                    <td><input type="number" name="avail" required=""></td>
+                </tr>
+                <tr>
+                    <th>ExpDate</th>
+                    <td><input type="date" name="exp" id="exp" placeholder="Enter date" required=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align=center""><input type="submit" name="submit" value="Submit"></th>
+                </tr>
+            </table>
+            
+        </form>
+<?php
+if (isset($_POST['submit']))
+{
+    $id=$_POST['ID'];
+    $n=$_POST['name'];
+    $a=$_POST['avail'];
+    $e=$_POST['exp'];
+    $qr="insert into bill values('$id','$n','$a','$e')";
+    if ($w->query($qr)===TRUE)
+    {
+        $s="select * from item";
+        $re=$w->query($s);
+        if($re->num_rows>0)
+        {
+        ?>
+<table align="center" border="1">
+    <tr>
+        <th>Item_ID</th>
+        <th>Item_name</th>
+        <th>Availability</th>
+        <th>ExpDate</th>
+    </tr>
+    <tr>
+       <?php 
+        while($u=$re->fetch_assoc())
+        {
+           
+            ?>
+        <td><?php echo $u['item_id']; ?></td>
+        <td><?php echo $u['item_name']; ?></td>
+        <td><?php echo $u['availability']; ?></td>
+        <td><?php echo $u['expdate']; ?></td>
+    </tr>
+    
+        <?php
+        }?>
+        
+</table>
+<?php
+    }
+
+ else {
+ 
+        echo 'Error Inserting Details';    
+    }
+}
+ else {
+    echo 'Error Occured'.$w->error;
+}
+}
+$w->close();
+?>
+        <script>
+            var letters=/^A-Z a-z$/;
+            var n=document.getElementbyId("name");
+            if(name.value.match(letters))
+            {
+                
+            }
+            else
+            {
+                window.alert("Enter valid name");
+            }
+         </script>
+    </body>
+</html>
